@@ -1,32 +1,17 @@
 import {Component } from '@angular/core';
-import {Hero} from "./Models/Hero";
-import {HeroService} from "./hero.service";
+import {AngularFire, FirebaseListObservable} from "angularfire2";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [HeroService]
 })
 
 export class AppComponent {
-  title = 'Tour of Heroes';
-
-  heroes: Hero[];
-
-  ngOnInit(): void{
-    this.getHeroes();
-  }
-
-  selectedHero: Hero;
-  constructor(private heroService: HeroService) {}
-
-  onSelect(hero: Hero): void{
-    this.selectedHero = hero;
-  }
-
-  getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+  title = 'AngularFire 2';
+  constructor(private af: AngularFire){
+    const courses$ : FirebaseListObservable<any> = af.database.list('messages');
+    courses$.subscribe(val => console.log(val));
   }
 }
 
