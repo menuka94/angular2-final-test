@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>User Form (Model Driven)</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <!--Name-->
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" #refName name="name" class="form-control" formControlName="name">
+      <!--<b>{{refName.className}}</b>-->
+      <div *ngIf="userForm.controls['name'].hasError('required')" class="alert alert-danger">
+        Name cannot be blank
+      </div>
+      <div *ngIf="userForm.controls['name'].hasError('minlength')" class="alert alert-danger">
+        Minimum Length is 4
+      </div>
+      <div *ngIf="userForm.controls['name'].hasError('maxlength')" class="alert alert-danger">
+        Maximum Length is 10
+      </div>
+    </div>
+
+    <!--Email-->
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" name="email" class="form-control" formControlName="email">
+    </div>
+
+    <div formGroupName="address">
+      <!--Street-->
+      <div class="form-group">
+        <label>Street</label>
+        <input type="text" name="street" class="form-control" formControlName="street">
+      </div>
+
+      <!--City-->
+      <div class="form-group">
+        <label>City</label>
+        <input type="text" name="city" class="form-control" formControlName="city">
+      </div>
+
+      <!--Postal Code-->
+      <div class="form-group">
+        <label>Postal Code</label>
+        <input type="text"  name="postalCode" class="form-control" formControlName="postalCode">
+        <div *ngIf="userForm.controls['address'].controls['postalCode'].hasError('pattern')" class="alert alert-danger">
+          Postal Code should contain exactly 5 numbers
+        </div>
+      </div>
+
+    </div>
+    <button [disabled]="!userForm.valid || userForm.untouched" class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>

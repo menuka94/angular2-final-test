@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { InputsAndOutputsParentComponent } from './inputs-and-outputs-parent/inp
 import { InputsAndOutputsChildComponent } from './inputs-and-outputs-child/inputs-and-outputs-child.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+import { ModelDrivenFormsComponent } from './model-driven-forms/model-driven-forms.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +26,12 @@ import { TemplateDrivenFormsComponent } from './template-driven-forms/template-d
     InputsAndOutputsChildComponent,
     PipesComponent,
     TemplateDrivenFormsComponent,
+    ModelDrivenFormsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     CommonModule,
     AngularFireModule.initializeApp(firebaseConfig),
