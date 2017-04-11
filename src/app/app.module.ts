@@ -15,6 +15,7 @@ import { InputsAndOutputsChildComponent } from './inputs-and-outputs-child/input
 import { PipesComponent } from './pipes/pipes.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { ModelDrivenFormsComponent } from './model-driven-forms/model-driven-forms.component';
+import {RouterModule, Routes, Router} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,10 @@ import { ModelDrivenFormsComponent } from './model-driven-forms/model-driven-for
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([,
+      {path: 'directive_example', component: DirectivesExampleComponent},
+      {path: 'pipes', component: PipesComponent}
+    ]),
     FormsModule,
     ReactiveFormsModule,
     HttpModule,

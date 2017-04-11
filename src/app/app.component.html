@@ -11,5 +11,10 @@
         <li class="list-group-item" *ngFor="let name of names">{{name.id}}. {{name.name}}</li>
       </ul>
     </div>
+    <nav>
+      <a routerLink="/directives_example" routerLinkActive="active">Directives</a>
+      <a routerLink="/pipes" routerLinkActive="active">Pipes</a>
+    </nav>
+    <router-outlet></router-outlet>
   </div>
 </div>
