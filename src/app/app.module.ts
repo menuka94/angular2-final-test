@@ -10,6 +10,10 @@ import { StyleBindingComponent } from './style-binding/style-binding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { DirectivesExampleComponent } from './directives-example/directives-example.component';
 import {CommonModule} from "@angular/common";
+import { InputsAndOutputsParentComponent } from './inputs-and-outputs-parent/inputs-and-outputs-parent.component';
+import { InputsAndOutputsChildComponent } from './inputs-and-outputs-child/inputs-and-outputs-child.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,10 @@ import {CommonModule} from "@angular/common";
     StyleBindingComponent,
     EventBindingComponent,
     DirectivesExampleComponent,
+    InputsAndOutputsParentComponent,
+    InputsAndOutputsChildComponent,
+    PipesComponent,
+    TemplateDrivenFormsComponent,
   ],
   imports: [
     BrowserModule,
