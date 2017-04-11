@@ -43,6 +43,9 @@
         <div *ngIf="userForm.controls['address'].controls['postalCode'].hasError('pattern')" class="alert alert-danger">
           Postal Code should contain exactly 5 numbers
         </div>
+        <div *ngIf="userForm.controls['address'].controls['postalCode'].hasError('required')" class="alert alert-danger">
+          Postal Code cannot be blank
+        </div>
       </div>
 
     </div>
