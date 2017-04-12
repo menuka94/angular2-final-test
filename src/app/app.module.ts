@@ -18,6 +18,7 @@ import { ModelDrivenFormsComponent } from './model-driven-forms/model-driven-for
 import {RouterModule, Routes, Router} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import { NameComponent } from './name/name.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NameComponent } from './name/name.component';
     TemplateDrivenFormsComponent,
     ModelDrivenFormsComponent,
     NameComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

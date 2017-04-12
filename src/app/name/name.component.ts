@@ -34,4 +34,9 @@ export class NameComponent implements OnInit {
     let nextId = this.name_id + 1;
     this.router.navigate(['names', nextId]);
   }
+
+  goBack(){
+    let selectedId = this.name_id ? this.name_id : null;
+    this.router.navigate(['/', {id: selectedId}]);
+  }
 }
