@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute} from "@angular/router";
+import {Router, ActivatedRoute, Params} from "@angular/router";
 import {SampleService} from "../sample.service";
 
 @Component({
@@ -13,19 +13,25 @@ export class NameComponent implements OnInit {
   public name: any;
   public name_id: number;
 
-  constructor(private activatedRoute: ActivatedRoute, public sampleService: SampleService) { }
+  constructor(private activatedRoute: ActivatedRoute, public sampleService: SampleService,
+              private router: Router) { }
 
   ngOnInit() {
-    this.name_id = this.activatedRoute.snapshot.params['id'];
+    // this.name_id = this.activatedRoute.snapshot.params['id'];
 
-    // this.sampleService.getNames()
-    //   .subscribe(resSampleData => this.names = resSampleData,
-    //     resSampleError => this.errorMessage = resSampleError);
-    // for(let name in this.names){
-    //   if(name['id'] == id){
-    //     this.name = name;
-    //   }
-    // }
+    this.activatedRoute.params.subscribe((params: Params) => {
+      this.name_id = parseInt(params['id']);
+    });
 
+  }
+
+  visitPrevious(){
+    let preiviousId = this.name_id - 1;
+    this.router.navigate(['names', preiviousId]);
+  }
+
+  visitNext(){
+    let nextId = this.name_id + 1;
+    this.router.navigate(['names', nextId]);
   }
 }
