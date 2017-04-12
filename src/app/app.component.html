@@ -5,16 +5,21 @@
   <!--<app-template-driven-forms></app-template-driven-forms>-->
   <!--<app-model-driven-forms></app-model-driven-forms>-->
   <div class="row">
-    <div class="col-md-8 col-md-offset-3">
+    <div class="col-md-6 col-md-offset-0">
       <h3>{{errorMessage}}</h3>
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let name of names">{{name.id}}. {{name.name}}</li>
+        <li class="list-group-item" *ngFor="let person of names" (click)="onSelect(person)">
+          {{person.id}}. {{person.name}}</li>
       </ul>
     </div>
-    <nav>
-      <a routerLink="/directives_example" routerLinkActive="active">Directives</a>
-      <a routerLink="/pipes" routerLinkActive="active">Pipes</a>
-    </nav>
-    <router-outlet></router-outlet>
+
+    <div class="col-md-6">
+      <nav>
+        <a routerLink="directives_example" class="btn btn-primary" routerLinkActive="active">Directives</a>
+        <a routerLink="pipes" class="btn btn-primary" routerLinkActive="active">Pipes</a>
+        <a routerLink="" class="btn btn-primary" routerLinkActive="active">Home</a>
+      </nav>
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

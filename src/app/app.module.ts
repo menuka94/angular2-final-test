@@ -16,6 +16,8 @@ import { PipesComponent } from './pipes/pipes.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { ModelDrivenFormsComponent } from './model-driven-forms/model-driven-forms.component';
 import {RouterModule, Routes, Router} from "@angular/router";
+import {AppRoutingModule} from "./app-routing.module";
+import { NameComponent } from './name/name.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +30,11 @@ import {RouterModule, Routes, Router} from "@angular/router";
     PipesComponent,
     TemplateDrivenFormsComponent,
     ModelDrivenFormsComponent,
+    NameComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([,
-      {path: 'directive_example', component: DirectivesExampleComponent},
-      {path: 'pipes', component: PipesComponent}
-    ]),
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
